@@ -1,5 +1,6 @@
 package com.logihub.service
 
+import com.logihub.model.request.LoginRequest
 import com.logihub.model.request.UpdateTruckRequest
 import com.logihub.model.request.UpdateUserRequest
 import com.logihub.model.request.UserRequest
@@ -10,108 +11,95 @@ import com.logihub.model.response.ShortInvoiceDTO
 import com.logihub.model.response.ShortTruckDTO
 import com.logihub.model.response.TruckDTO
 import com.logihub.model.response.TruckManagerDTO
-import retrofit2.Call
-import retrofit2.http.Body
-import retrofit2.http.GET
-import retrofit2.http.Header
-import retrofit2.http.Headers
-import retrofit2.http.PATCH
-import retrofit2.http.POST
-import retrofit2.http.Path
+import retrofit2.Callback
 
 interface ApiService {
 
-    @Headers("Content-Type: application/json")
-    @POST("/api/login")
-    fun login(@Header("Authorization") auth: String): Call<LoginResponse>
+    fun login(
+        user: LoginRequest,
+        callback: Callback<LoginResponse>
+    )
 
-    @Headers("Content-Type: application/json")
-    @POST("/api/truck-manager/register")
-    fun register(@Body registrationData: UserRequest): Call<Void>
+    fun register(
+        user: UserRequest,
+        callback: Callback<Void>
+    )
 
-    @GET("/api/truck-manager/{user-id}")
     fun getManager(
-        @Header("Authorization") token: String,
-        @Path("user-id") userId: Long
-    ): Call<TruckManagerDTO>
+        token: String,
+        userId: Long,
+        callback: Callback<TruckManagerDTO>
+    )
 
-    @PATCH("/api/truck-manager/{user-id}")
-    @Headers("Content-Type: application/json")
     fun updateManager(
-        @Header("Authorization") token: String,
-        @Path("user-id") userId: Long,
-        @Body driver: UpdateUserRequest
-    ): Call<Void>
+        token: String,
+        userId: Long,
+        user: UpdateUserRequest,
+        callback: Callback<Void>
+    )
 
-    @GET("/api/truck-manager/{user-id}/trucks/all")
     fun getTrucks(
-        @Header("Authorization") token: String,
-        @Path("driver-id") userId: Long
-    ): Call<List<ShortTruckDTO>>
+        token: String,
+        userId: Long,
+        callback: Callback<List<ShortTruckDTO>>
+    )
 
-    @GET("/api/truck-manager/{user-id}/trucks/{truck-id}")
     fun getTruck(
-        @Header("Authorization") token: String,
-        @Path("user-id") userId: Long,
-        @Path("truck-id") truckId: Long
-    ): Call<TruckDTO>
+        token: String,
+        userId: Long,
+        truckId: Long,
+        callback: Callback<TruckDTO>
+    )
 
-    @PATCH("/api/truck-manager/{user-id}/trucks/{truck-id}")
     fun updateTruck(
-        @Header("Authorization") token: String,
-        @Path("user-id") userId: Long,
-        @Path("truck-id") truckId: Long,
-        @Body truck: UpdateTruckRequest
-    ): Call<Void>
+        token: String,
+        userId: Long,
+        truckId: Long,
+        truck: UpdateTruckRequest,
+        callback: Callback<Void>
+    )
 
-    @GET("/api/truck-manager/{user-id}/invoices/truck-number/{truck-number}")
-    fun getInvoicesSearch(
-        @Header("Authorization") token: String,
-        @Path("user-id") userId: Long,
-        @Path("truck-number") truckNumber: String
-    ): Call<Page<List<ShortInvoiceDTO>>>
-
-    @GET("/api/truck-manager/{user-id}/invoices")
     fun getInvoices(
-        @Header("Authorization") token: String,
-        @Path("user-id") userId: Long
-    ): Call<Page<ShortInvoiceDTO>>
+        token: String,
+        userId: Long,
+        callback: Callback<Page<ShortInvoiceDTO>>
+    )
 
-    @GET("/api/truck-manager/{user-id}/invoices/{invoice-id}")
     fun getInvoice(
-        @Header("Authorization") token: String,
-        @Path("user-id") userId: Long,
-        @Path("invoice-id") invoiceId: Long
-    ): Call<InvoiceDTO>
+        token: String,
+        userId: Long,
+        invoiceId: Long,
+        callback: Callback<InvoiceDTO>
+    )
 
-    @PATCH("/api/truck-manager/{user-id}/invoices/{invoice-id}")
     fun signInvoice(
-        @Header("Authorization") token: String,
-        @Path("user-id") userId: Long,
-        @Path("invoice-id") invoiceId: Long
-    ): Call<Void>
+        token: String,
+        userId: Long,
+        invoiceId: Long,
+        callback: Callback<Void>
+    )
 
-    @GET("/api/truck-manager/{user-id}/invoices/not-signed-by-parking-manager")
     fun getNotSignedByParkingManagerInvoices(
-        @Header("Authorization") token: String,
-        @Path("user-id") userId: Long
-    ): Call<Page<ShortInvoiceDTO>>
+        token: String,
+        userId: Long,
+        callback: Callback<Page<ShortInvoiceDTO>>
+    )
 
-    @GET("/api/truck-manager/{user-id}/invoices/not-signed-by-truck-manager")
     fun getNotSignedByTruckManagerInvoices(
-        @Header("Authorization") token: String,
-        @Path("user-id") userId: Long
-    ): Call<Page<ShortInvoiceDTO>>
+        token: String,
+        userId: Long,
+        callback: Callback<Page<ShortInvoiceDTO>>
+    )
 
-    @GET("/api/truck-manager/{user-id}/invoices/signed")
     fun getSignedInvoices(
-        @Header("Authorization") token: String,
-        @Path("user-id") userId: Long
-    ): Call<Page<ShortInvoiceDTO>>
+        token: String,
+        userId: Long,
+        callback: Callback<Page<ShortInvoiceDTO>>
+    )
 
-    @GET("/api/truck-managers/{user-id}/invoices/{invoice-id}/export")
     fun downloadInvoice(
-        @Header("Authorization") token: String,
-        @Path("user-id") userId: Long
-    ): Call<Void>
+        token: String,
+        userId: Long,
+        callback: Callback<Void>
+    )
 }
