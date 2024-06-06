@@ -1,4 +1,14 @@
 package com.logihub.model.request
 
-class UserRequest {
-}
+data class UserRequest(
+
+    var firstName: String,
+
+    var lastName: String,
+
+    var email: String,
+
+    var password: String,
+
+    var companyId: Long,
+)

@@ -1,4 +1,10 @@
 package com.logihub.model.request
 
-class UpdateUserRequest {
-}
+data class UpdateUserRequest(
+
+    var firstName: String,
+
+    var lastName: String,
+
+    var avatar: String
+)

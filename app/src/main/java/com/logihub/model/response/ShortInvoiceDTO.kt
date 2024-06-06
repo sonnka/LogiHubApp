@@ -1,4 +1,20 @@
 package com.logihub.model.response
 
-class ShortInvoiceDTO {
-}
+data class ShortInvoiceDTO(
+
+    var id: Long,
+
+    var type: String,
+
+    var truckNumber: String,
+
+    var placeNumber: String,
+
+    var truckManagerEmail: String,
+
+    var parkingManagerEmail: String,
+
+    var creationDate: String,
+
+    var price: Double
+)

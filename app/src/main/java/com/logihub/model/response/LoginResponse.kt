@@ -1,4 +1,15 @@
 package com.logihub.model.response
 
-class LoginResponse {
-}
+data class LoginResponse(
+    var id: Long,
+
+    var token: String,
+
+    var name: String,
+
+    var surname: String,
+
+    var role: String,
+
+    var avatar: String,
+)

@@ -1,4 +1,16 @@
 package com.logihub.model.response
 
-class TruckManagerDTO {
-}
+data class TruckManagerDTO(
+
+    var id: Long,
+
+    var firstName: String,
+
+    var lastName: Double,
+
+    var email: Double,
+
+    var avatar: Double,
+
+    var company: CompanyDTO
+)

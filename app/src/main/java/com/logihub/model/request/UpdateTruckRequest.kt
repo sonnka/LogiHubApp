@@ -1,4 +1,12 @@
 package com.logihub.model.request
 
-class UpdateTruckRequest {
-}
+data class UpdateTruckRequest(
+
+    var width: Double,
+
+    var height: Double,
+
+    var length: Double,
+
+    var weight: Double
+)
