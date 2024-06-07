@@ -11,6 +11,7 @@ import com.logihub.model.response.ShortInvoiceDTO
 import com.logihub.model.response.ShortTruckDTO
 import com.logihub.model.response.TruckDTO
 import com.logihub.model.response.TruckManagerDTO
+import okhttp3.ResponseBody
 import retrofit2.Callback
 
 interface ApiService {
@@ -62,7 +63,14 @@ interface ApiService {
     fun getInvoices(
         token: String,
         userId: Long,
-        callback: Callback<Page<ShortInvoiceDTO>>
+        callback: Callback<Page<List<ShortInvoiceDTO>>>
+    )
+
+    fun getInvoicesSearch(
+        token: String,
+        userId: Long,
+        truckNumber: String,
+        callback: Callback<Page<List<ShortInvoiceDTO>>>
     )
 
     fun getInvoice(
@@ -82,24 +90,28 @@ interface ApiService {
     fun getNotSignedByParkingManagerInvoices(
         token: String,
         userId: Long,
-        callback: Callback<Page<ShortInvoiceDTO>>
+        truckNumber: String,
+        callback: Callback<Page<List<ShortInvoiceDTO>>>
     )
 
     fun getNotSignedByTruckManagerInvoices(
         token: String,
         userId: Long,
-        callback: Callback<Page<ShortInvoiceDTO>>
+        truckNumber: String,
+        callback: Callback<Page<List<ShortInvoiceDTO>>>
     )
 
     fun getSignedInvoices(
         token: String,
         userId: Long,
-        callback: Callback<Page<ShortInvoiceDTO>>
+        truckNumber: String,
+        callback: Callback<Page<List<ShortInvoiceDTO>>>
     )
 
     fun downloadInvoice(
         token: String,
         userId: Long,
-        callback: Callback<Void>
+        invoiceId: Long,
+        callback: Callback<ResponseBody>
     )
 }

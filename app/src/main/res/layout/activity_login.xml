@@ -81,7 +81,6 @@
             android:id="@+id/passwordEditText"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:fontFamily="@font/alata"
             android:hint="@string/msg4"
             android:inputType="textPassword"
             android:lines="1"
@@ -89,17 +88,14 @@
             android:textColor="@color/black"
             android:textColorHint="@color/grey"
             android:textSize="17dp" />
-
-
     </com.google.android.material.textfield.TextInputLayout>
-
 
     <Button
         android:id="@+id/button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
-        android:layout_marginTop="75dp"
+        android:layout_marginTop="85dp"
         android:backgroundTint="@color/green"
         android:onClick="login"
         android:text="@string/msg2"

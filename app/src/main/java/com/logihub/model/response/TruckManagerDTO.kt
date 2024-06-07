@@ -6,11 +6,11 @@ data class TruckManagerDTO(
 
     var firstName: String,
 
-    var lastName: Double,
+    var lastName: String,
 
-    var email: Double,
+    var email: String,
 
-    var avatar: Double,
+    var avatar: String,
 
     var company: CompanyDTO
 )

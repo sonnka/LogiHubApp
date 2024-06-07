@@ -12,6 +12,7 @@ import com.logihub.model.response.ShortTruckDTO
 import com.logihub.model.response.TruckDTO
 import com.logihub.model.response.TruckManagerDTO
 import okhttp3.OkHttpClient
+import okhttp3.ResponseBody
 import retrofit2.Callback
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
@@ -21,7 +22,7 @@ class ApiServiceImpl : ApiService {
     private val client = OkHttpClient.Builder().build()
 
     private val retrofit = Retrofit.Builder()
-        .baseUrl("https://5227-46-98-183-128.ngrok-free.app/")
+        .baseUrl("https://f6f5-46-98-183-185.ngrok-free.app/")
         .addConverterFactory(GsonConverterFactory.create())
         .client(client)
         .build()
@@ -79,9 +80,18 @@ class ApiServiceImpl : ApiService {
     override fun getInvoices(
         token: String,
         userId: Long,
-        callback: Callback<Page<ShortInvoiceDTO>>
+        callback: Callback<Page<List<ShortInvoiceDTO>>>
     ) {
         service.getInvoices(token, userId).enqueue(callback)
+    }
+
+    override fun getInvoicesSearch(
+        token: String,
+        userId: Long,
+        truckNumber: String,
+        callback: Callback<Page<List<ShortInvoiceDTO>>>
+    ) {
+        service.getInvoicesSearch(token, userId, truckNumber).enqueue(callback)
     }
 
     override fun getInvoice(
@@ -105,28 +115,36 @@ class ApiServiceImpl : ApiService {
     override fun getNotSignedByParkingManagerInvoices(
         token: String,
         userId: Long,
-        callback: Callback<Page<ShortInvoiceDTO>>
+        truckNumber: String,
+        callback: Callback<Page<List<ShortInvoiceDTO>>>
     ) {
-        service.getNotSignedByParkingManagerInvoices(token, userId).enqueue(callback)
+        service.getNotSignedByParkingManagerInvoices(token, userId, truckNumber).enqueue(callback)
     }
 
     override fun getNotSignedByTruckManagerInvoices(
         token: String,
         userId: Long,
-        callback: Callback<Page<ShortInvoiceDTO>>
+        truckNumber: String,
+        callback: Callback<Page<List<ShortInvoiceDTO>>>
     ) {
-        service.getNotSignedByTruckManagerInvoices(token, userId).enqueue(callback)
+        service.getNotSignedByTruckManagerInvoices(token, userId, truckNumber).enqueue(callback)
     }
 
     override fun getSignedInvoices(
         token: String,
         userId: Long,
-        callback: Callback<Page<ShortInvoiceDTO>>
+        truckNumber: String,
+        callback: Callback<Page<List<ShortInvoiceDTO>>>
     ) {
-        service.getSignedInvoices(token, userId).enqueue(callback)
+        service.getSignedInvoices(token, userId, truckNumber).enqueue(callback)
     }
 
-    override fun downloadInvoice(token: String, userId: Long, callback: Callback<Void>) {
-        service.downloadInvoice(token, userId).enqueue(callback)
+    override fun downloadInvoice(
+        token: String,
+        userId: Long,
+        invoiceId: Long,
+        callback: Callback<ResponseBody>
+    ) {
+        service.downloadInvoice(token, userId, invoiceId).enqueue(callback)
     }
 }

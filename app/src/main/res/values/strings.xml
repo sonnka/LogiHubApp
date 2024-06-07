@@ -8,4 +8,13 @@
     <string name="msg6">Last name</string>
     <string name="msg7">Email</string>
     <string name="msg8">Password</string>
+    <string name="msg9">Trucks</string>
+    <string name="msg10">Invoices</string>
+    <string name="msg11">Profile</string>
+    <string name="msg12">Name</string>
+    <string name="msg13">Surname</string>
+    <string name="msg14">Personal info</string>
+    <string name="msg15">System settings</string>
+    <string name="msg16">Change language</string>
+    <string name="msg19">Sing out</string>
 </resources>
