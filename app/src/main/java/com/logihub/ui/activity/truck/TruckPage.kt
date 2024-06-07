@@ -1,4 +1,4 @@
-package com.logihub.ui.activity
+package com.logihub.ui.activity.truck
 
 import android.content.Intent
 import android.os.Bundle
@@ -10,6 +10,7 @@ import androidx.appcompat.app.AppCompatActivity
 import com.logihub.R
 import com.logihub.model.response.TruckDTO
 import com.logihub.service.ApiServiceImpl
+import com.logihub.ui.activity.general.MainPage
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response

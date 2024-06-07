@@ -1,4 +1,4 @@
-package com.logihub.ui.activity
+package com.logihub.ui.activity.general
 
 import android.content.Intent
 import android.os.Bundle

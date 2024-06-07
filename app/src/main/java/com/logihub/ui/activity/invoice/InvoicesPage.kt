@@ -1,4 +1,4 @@
-package com.logihub.ui.activity
+package com.logihub.ui.activity.invoice
 
 import android.annotation.SuppressLint
 import android.os.Bundle
@@ -16,6 +16,7 @@ import com.logihub.R
 import com.logihub.model.response.Page
 import com.logihub.model.response.ShortInvoiceDTO
 import com.logihub.service.ApiServiceImpl
+import com.logihub.ui.activity.general.MainPage
 import com.logihub.ui.adapter.InvoiceAdapter
 import retrofit2.Call
 import retrofit2.Callback
@@ -322,7 +323,7 @@ class InvoicesPage : Fragment() {
     @SuppressLint("Range")
     private fun fillData(dataList: Page<List<ShortInvoiceDTO>>) {
         if (dataList.content.isEmpty()) {
-            Toast.makeText(activity.context, "No data!", Toast.LENGTH_LONG).show()
+
         } else {
             for (item in dataList.content) {
                 invoicesIds.add(item.id)

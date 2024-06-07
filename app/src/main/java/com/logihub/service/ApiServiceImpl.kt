@@ -22,7 +22,7 @@ class ApiServiceImpl : ApiService {
     private val client = OkHttpClient.Builder().build()
 
     private val retrofit = Retrofit.Builder()
-        .baseUrl("https://f6f5-46-98-183-185.ngrok-free.app/")
+        .baseUrl("https://7ac1-46-98-183-185.ngrok-free.app/")
         .addConverterFactory(GsonConverterFactory.create())
         .client(client)
         .build()

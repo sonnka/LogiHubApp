@@ -36,7 +36,7 @@
                     android:layout_marginStart="25dp"
                     android:layout_marginTop="5dp"
                     android:lines="1"
-                    android:text="Email"
+                    android:text="@string/msg63"
                     android:textColor="@color/black"
                     android:textSize="15sp" />
 
@@ -47,7 +47,7 @@
                     android:layout_marginStart="65dp"
                     android:layout_marginTop="5dp"
                     android:lines="1"
-                    android:text="id"
+                    android:text="@string/msg64"
                     android:textColor="@color/white"
                     android:textSize="11sp" />
             </LinearLayout>
@@ -64,7 +64,7 @@
                     android:layout_gravity="start"
                     android:layout_marginTop="5dp"
                     android:lines="1"
-                    android:text="Number"
+                    android:text="@string/msg65"
                     android:textColor="@color/green"
                     android:textSize="15sp" />
             </LinearLayout>

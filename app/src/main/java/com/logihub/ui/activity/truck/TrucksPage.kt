@@ -1,4 +1,4 @@
-package com.logihub.ui.activity
+package com.logihub.ui.activity.truck
 
 import android.annotation.SuppressLint
 import android.os.Bundle
@@ -12,6 +12,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.logihub.R
 import com.logihub.model.response.ShortTruckDTO
 import com.logihub.service.ApiServiceImpl
+import com.logihub.ui.activity.general.MainPage
 import com.logihub.ui.adapter.TruckAdapter
 import retrofit2.Call
 import retrofit2.Callback

@@ -1,6 +1,7 @@
-package com.logihub.ui.activity
+package com.logihub.ui.activity.profile
 
 import android.content.Intent
+import android.content.res.Configuration
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -12,9 +13,12 @@ import com.google.android.material.button.MaterialButton
 import com.logihub.R
 import com.logihub.model.response.TruckManagerDTO
 import com.logihub.service.ApiServiceImpl
+import com.logihub.ui.activity.general.Login
+import com.logihub.ui.activity.general.MainPage
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
+import java.util.Locale
 
 class Profile : Fragment() {
 
@@ -26,6 +30,8 @@ class Profile : Fragment() {
     private lateinit var lastName: TextView
     private lateinit var email: TextView
     private lateinit var company: TextView
+    private lateinit var language: TextView
+    private lateinit var lang: String
 
     private val apiService = ApiServiceImpl()
     private lateinit var editUserButton: MaterialButton
@@ -52,9 +58,27 @@ class Profile : Fragment() {
         lastName = v.findViewById(R.id.lastNameText)
         email = v.findViewById(R.id.emailText)
         company = v.findViewById(R.id.companyText)
+        language = v.findViewById(R.id.translate)
 
         editUserButton = v.findViewById(R.id.editUserButton)
         signout = v.findViewById(R.id.singOut)
+
+        lang = if (Locale.getDefault().language == "en") {
+            "uk"
+        } else {
+            "en"
+        }
+
+        language.let { s ->
+            s.setOnClickListener {
+                setLocale(lang)
+                lang = if (lang == "en") {
+                    "uk"
+                } else {
+                    "en"
+                }
+            }
+        }
 
         editUserButton.let { e ->
             e.setOnClickListener {
@@ -69,6 +93,15 @@ class Profile : Fragment() {
         }
 
         getUser()
+    }
+
+    private fun setLocale(languageCode: String) {
+        val locale = Locale(languageCode)
+        Locale.setDefault(locale)
+        val resources = activity.resources
+        val config: Configuration = resources.configuration
+        config.setLocale(locale)
+        resources.updateConfiguration(config, resources.displayMetrics)
     }
 
     private fun getUser() {

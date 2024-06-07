@@ -8,7 +8,7 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.logihub.R
-import com.logihub.ui.activity.TruckPage
+import com.logihub.ui.activity.truck.TruckPage
 
 class TruckAdapter(
     var context: Context?,

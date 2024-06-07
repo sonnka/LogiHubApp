@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".ui.activity.UpdateProfile">
+    tools:context=".ui.activity.profile.UpdateProfile">
 
     <TextView
         android:id="@+id/mainText"
@@ -14,9 +14,9 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="135dp"
-        android:text="Profile"
+        android:text="@string/msg48"
         android:textColor="@color/black"
-        android:textSize="30dp"
+        android:textSize="30sp"
         android:textStyle="bold" />
 
     <com.google.android.material.textfield.TextInputLayout
@@ -36,14 +36,12 @@
             android:id="@+id/firstName"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:hint="First name"
+            android:hint="@string/msg49"
             android:inputType="text"
             android:lines="1"
             android:textColor="@color/black"
             android:textColorHint="@color/grey"
-            android:textSize="17dp" />
-
-
+            android:textSize="17sp" />
     </com.google.android.material.textfield.TextInputLayout>
 
 
@@ -64,12 +62,12 @@
             android:id="@+id/lastName"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:hint="Last name"
+            android:hint="@string/msg50"
             android:inputType="text"
             android:lines="3"
             android:textColor="@color/black"
             android:textColorHint="@color/grey"
-            android:textSize="17dp" />
+            android:textSize="17sp" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <Button
@@ -80,9 +78,7 @@
         android:layout_marginTop="65dp"
         android:backgroundTint="@color/purple_200"
         android:onClick="update"
-        android:text="Update"
+        android:text="@string/msg51"
         android:textColor="@color/black"
-        android:textSize="22dp" />
-
-
+        android:textSize="22sp" />
 </LinearLayout>

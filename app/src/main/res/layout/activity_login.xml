@@ -7,19 +7,19 @@
     android:layout_height="match_parent"
     android:fontFamily="sans-serif-thin"
     android:orientation="vertical"
-    tools:context=".ui.activity.Login">
+    tools:context=".ui.activity.general.Login">
 
     <TextView
         android:id="@+id/textSingUp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="right"
+        android:layout_gravity="end"
         android:layout_marginTop="45dp"
-        android:layout_marginRight="35dp"
+        android:layout_marginEnd="35dp"
         android:onClick="registration"
         android:text="@string/msg1"
         android:textColor="@color/dark_grey"
-        android:textSize="18dp" />
+        android:textSize="18sp" />
 
     <TextView
         android:id="@+id/mainText"
@@ -29,7 +29,7 @@
         android:layout_marginTop="135dp"
         android:text="@string/msg2"
         android:textColor="@color/black"
-        android:textSize="30dp"
+        android:textSize="30sp"
         android:textStyle="bold" />
 
 
@@ -55,7 +55,7 @@
             android:lines="1"
             android:textColor="@color/black"
             android:textColorHint="@color/grey"
-            android:textSize="17dp" />
+            android:textSize="17sp" />
 
 
     </com.google.android.material.textfield.TextInputLayout>
@@ -87,7 +87,7 @@
             android:maxLength="32"
             android:textColor="@color/black"
             android:textColorHint="@color/grey"
-            android:textSize="17dp" />
+            android:textSize="17sp" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <Button
@@ -100,6 +100,6 @@
         android:onClick="login"
         android:text="@string/msg2"
         android:textColor="@color/white"
-        android:textSize="22dp" />
+        android:textSize="22sp" />
 
 </LinearLayout>

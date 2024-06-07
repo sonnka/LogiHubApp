@@ -8,7 +8,7 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.logihub.R
-import com.logihub.ui.activity.InvoicePage
+import com.logihub.ui.activity.invoice.InvoicePage
 
 class InvoiceAdapter(
     var context: Context?,

@@ -1,4 +1,4 @@
-package com.logihub.ui.activity
+package com.logihub.ui.activity.profile
 
 import android.content.Intent
 import android.os.Bundle
@@ -12,6 +12,7 @@ import com.logihub.R
 import com.logihub.model.request.UpdateUserRequest
 import com.logihub.model.response.TruckManagerDTO
 import com.logihub.service.ApiServiceImpl
+import com.logihub.ui.activity.general.MainPage
 import com.logihub.util.Validator
 import retrofit2.Call
 import retrofit2.Callback

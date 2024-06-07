@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:fontFamily="sans-serif-thin"
     android:orientation="vertical"
-    tools:context=".ui.activity.UpdateTruckPage">
+    tools:context=".ui.activity.truck.UpdateTruckPage">
 
     <TextView
         android:id="@+id/text"
@@ -14,7 +14,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="70dp"
-        android:text="Truck"
+        android:text="@string/msg53"
         android:textAlignment="center"
         android:textColor="@color/black"
         android:textSize="23sp"
@@ -25,7 +25,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
-        android:text="Number"
+        android:text="@string/msg54"
         android:textAlignment="center"
         android:textColor="@color/green"
         android:textSize="17sp" />
@@ -48,7 +48,7 @@
             android:layout_width="80dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="20dp"
-            android:text="Width: "
+            android:text="@string/msg55"
             android:textColor="@color/black"
             android:textSize="15sp" />
 
@@ -73,7 +73,7 @@
             android:layout_width="80dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="20dp"
-            android:text="Length: "
+            android:text="@string/msg56"
             android:textColor="@color/black"
             android:textSize="15sp" />
 
@@ -98,7 +98,7 @@
             android:layout_width="80dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="20dp"
-            android:text="Height: "
+            android:text="@string/msg57"
             android:textColor="@color/black"
             android:textSize="15sp" />
 
@@ -123,7 +123,7 @@
             android:layout_width="80dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="20dp"
-            android:text="Weight: "
+            android:text="@string/msg58"
             android:textColor="@color/black"
             android:textSize="15sp" />
 
@@ -144,9 +144,8 @@
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="85dp"
         android:backgroundTint="@color/green"
-        android:text="Update"
+        android:text="@string/msg59"
         android:textAllCaps="false"
         android:textColor="@color/white"
-        android:textSize="20dp" />
-
+        android:textSize="20sp" />
 </LinearLayout>
