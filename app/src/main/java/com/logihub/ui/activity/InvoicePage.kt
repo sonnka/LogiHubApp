@@ -96,7 +96,6 @@ class InvoicePage : AppCompatActivity() {
                             if (file != null) {
                                 Toast.makeText(activity, "Invoice downloaded!", Toast.LENGTH_LONG)
                                     .show()
-                                // Handle opening/displaying the file
                             } else {
                                 Toast.makeText(
                                     activity,
@@ -118,11 +117,15 @@ class InvoicePage : AppCompatActivity() {
                 }
             })
     }
-    
+
     private fun saveFile(body: ResponseBody): File? {
         return try {
-            val file =
-                File(activity.getExternalFilesDir(Environment.DIRECTORY_DOCUMENTS), "invoice.pdf")
+            val downloadDir =
+                Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS)
+            if (!downloadDir.exists()) {
+                downloadDir.mkdirs()
+            }
+            val file = File(downloadDir, "invoice.pdf")
             Log.d("SaveFile", "Saving to: ${file.absolutePath}")
             var inputStream: InputStream? = null
             var outputStream: FileOutputStream? = null
@@ -143,6 +146,7 @@ class InvoicePage : AppCompatActivity() {
             }
         } catch (e: Exception) {
             e.printStackTrace()
+            Log.e("SaveFile", "Error: ${e.message}")
             null
         }
     }

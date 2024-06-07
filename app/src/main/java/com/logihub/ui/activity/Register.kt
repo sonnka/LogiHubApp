@@ -99,7 +99,7 @@ class Register : AppCompatActivity() {
             lastNameInput.text.toString().trim(),
             emailInput.text.toString().trim(),
             passwordInput.text.toString().trim(),
-            0L
+            3L
         )
 
         Log.d("User", user.toString())
